@@ -27,10 +27,39 @@ inquirer.prompt([
 ]).then(function({ role }) {
         if (role == "Manager"){
             // run function
+            promptGithub();
         }else if (role == "Engineer"){
             // run function
+            promptGithub();
         }else if (role == "Intern"){
             // run function
+            promptSchool();
         }
 
 });
+
+function promptGithub() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "username",
+            message: "Enter your GitHub username:"
+        }
+    ]).then(function(userInput){
+        // push username to html card
+        // $("#id").text("GitHub: " + userInput.username);
+    });
+};
+
+function promptSchool() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "school",
+            message: "What college do you attend?"
+        }
+    ]).then(function(userInput){
+        // push username to html card
+        // $("#id").text("College: " + userInput.school);
+    });
+};
